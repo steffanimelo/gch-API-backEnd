@@ -1,0 +1,20 @@
+{
+  "name": "gch-api-backend",
+  "version": "1.0.0",
+  "description": "Game Characters API - Final Fantasy",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Dea, Francois and Steffani",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "kill-port": "^1.6.1",
+    "nodemon": "^2.0.15"
+  }
+}
