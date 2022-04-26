@@ -13,11 +13,10 @@ app.use(cookieParser());
 app.use(express.json());   // middleware that processes the incoming raw json
 app.use(tracker);
 app.use('/playground', playgroundRouter);
-app.get('/', (req, res) => res.send('Game Characters API'));
-//app.get('*', (req, res) => {
-//    console.log(req.cookies);
-//    res.send('Game Characters API');          //In need of improvement
-//});
+app.get('/', (req, res) => {         //
+    console.log(req.cookies);
+    res.send('Game Characters API');       
+});                                        
 
 
 
