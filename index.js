@@ -1,4 +1,4 @@
-// npm i express   /  npm i -D nodemon  /  npm i -D kill-port  / npm i cookie-parser
+// npm i express   /  npm i -D nodemon  /  npm i -D kill-port  / npm i cookie-parser  / npm i mongoose
 
 import express from "express";
 import cookieParser from "cookie-parser";
@@ -8,7 +8,7 @@ import playgroundRouter from "./routes/characterRouter.js";
 import tracker from "./middlewares/tracker.js";
 import { nextTick } from "process";
 
-const app = express();    //function that serves as a middleware and returnes:  (req, res, next) => {} 
+const app = express();     //function that serves as a middleware and returnes:  (req, res, next) => {} 
 const port = process.env.PORT || 5050;
 
 app.use(cookieParser());
