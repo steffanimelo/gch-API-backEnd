@@ -1,6 +1,8 @@
 const errorHandler = (err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ error: err.message});      // how can I trow this error in DEV mode only? will be wise to do so?
+    if (process.env.NODE_ENV !== 'development') {
+    console.error(err.stack);  
+    }
+    res.status(err.statusCode).json({ error: err.message});      
 };
 
-export default errorHandler;
+export default errorHandler;                            // how can I make a more robust error handler for the client?
