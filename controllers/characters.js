@@ -1,18 +1,13 @@
-import mongoose from "mongoose";
 import ErrorResponse from "../utils/ErrorResponse.js";
 import asyncHandler from "../middlewares/asyncHandler.js";
+import Post from "../models/Post.js";
 
 
 
-try {
-    const res = await mongoose.connect(process.env.MONGO_URI);
-    console.log(res);
-} catch (error) {
-    console.log(error);
-}
-
-
-export const getAllCharacters = asyncHandler (async (req, res, next) => res.sen('Get All Characters'));
+export const getAllCharacters = asyncHandler (async (req, res, next) => {
+    const posts = await Post.find()
+    res.json(posts);
+});
 
 export const getSingleCharacter = asyncHandler(async (req, res) => res.send('Getting a Single Character'));
 
