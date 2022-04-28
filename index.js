@@ -1,5 +1,5 @@
-// npm i express   /  npm i -D nodemon  /  npm i -D kill-port  / npm i cookie-parser  / npm i mongoose
 
+import "./db/db-index.js";
 import express from "express";
 import cookieParser from "cookie-parser";
 import fs from "fs";
