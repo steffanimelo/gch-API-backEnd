@@ -12,7 +12,7 @@ const app = express();     //function that serves as a middleware and returnes: 
 const port = process.env.PORT || 5050;
 
 app.use(cookieParser());
-app.use(express.json());   // middleware that processes the incoming raw json
+app.use(express.json());   // middleware that processes the incoming raw json (our Body inputs)
 app.use(tracker);
 app.use('/playground', playgroundRouter);
 
