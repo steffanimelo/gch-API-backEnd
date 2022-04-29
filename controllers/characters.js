@@ -7,7 +7,7 @@ import Charater from "../models/Character.js";
 export const getAllCharacters = asyncHandler (async (req, res, next) => {
     const characters = await Charater.find()
     const {params: {name, id}} = req
-    await Charater.find({$or:[{name}, {id}]});
+    await Charater.find({$or:[{name}, {id}]});                     //In need of testing in the front-End
     res.json(characters);
 });
 
