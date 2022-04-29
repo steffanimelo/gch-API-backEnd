@@ -11,6 +11,7 @@ export const getAllCharacters = asyncHandler (async (req, res, next) => {
     res.json(characters);
 });
 
+
 export const getSingleCharacter = asyncHandler(async (req, res) => {
     const {
         params: {id}           
@@ -46,3 +47,4 @@ export const deleteCharacter = asyncHandler (async (req, res) => {
     if(!deleted) throw new ErrorResponse(`Charater with this ${id} doesn't exist!`, 404);  // Joi will substitute this one
     res.json({success: `Charater with this ${id} was deleted!`})
 });
+
