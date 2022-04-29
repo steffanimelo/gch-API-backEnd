@@ -3,7 +3,7 @@ const { Schema, model } = mongoose;
 
 
 const postSchema = new Schema({
-id: {type: String, required: [true, 'ID is required!']},
+id: {type: Number, required: [true, 'ID is required!']},
 name: {type: String, required: [true, 'Name is required!']},
 location: {type: String, required: [true, 'Location is required!']},
 elements: {type: String, required: [true, 'Element is required!']},
@@ -14,9 +14,7 @@ weapon: {type: String, required: [true, 'Weapon is required!']},
 game: {type: String, required: [true, 'Game Version is required!']},
 description: {type: String, required: [true, 'Description is required!']},
 img_url: {type: String, required: [true, 'Img URL is required!']}
-//'https://drive.google.com/file/d/1fpVe16ZNgIIrG34GE1vAHmF7xefANPz3/view?usp=sharing'  
-// or in /image/locationRoute/file.png
 });
 
 
-export default model ('Post', postSchema);
+export default model ('Character', postSchema);
