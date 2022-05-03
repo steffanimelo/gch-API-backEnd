@@ -8,26 +8,20 @@ import tracker from "./middlewares/tracker.js";
 import { nextTick } from "process";
 import cors from "cors";
 
-const app = express(); //function that serves as a middleware and returnes:  (req, res, next) => {}
+const app = express();
 const port = process.env.PORT || 5050;
 
 app.use(cookieParser());
 /*---------------  CORS ---------------------*/
-app.use(
-  cors()
-  //       {
-  //     origin: ["http://localhost:3000/playground"],
-  //     methods: ["GET"],
-  //   }
-);
+app.use(cors({ origin: "*", methods: ["GET"] }));
 
 /*---------------  CORS ---------------------*/
-app.use(express.json()); // middleware that processes the incoming raw json (our Body inputs)
+app.use(express.json());
 
 app.use(tracker);
 app.use("/playground", playgroundRouter);
-
-app.use(errorHandler); // the order matters here; it has to be at the end
+app.use("*", (req, res) => res.sendStatus(404));
+app.use(errorHandler);
 
 app.listen(port, () =>
   console.log(`Server running at http://localhost:${port}`)
