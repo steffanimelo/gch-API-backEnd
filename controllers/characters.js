@@ -2,63 +2,57 @@ import ErrorResponse from "../utils/ErrorResponse.js";
 import asyncHandler from "../middlewares/asyncHandler.js";
 import Character from "../models/Character.js";
 
+/* export const updateAll = asyncHandler(async (req, res) => {
+  const docs = await Character.find();
+  for await (const doc of docs) {
+    doc.elements = doc.elements.map((el) => el.toLowerCase());
+    doc.weakness = doc.weakness.map((el) => el.toLowerCase());
+    doc.strength = doc.strength.map((el) => el.toLowerCase());
+    doc.resistance = doc.resistance.map((el) => el.toLowerCase());
+    doc.weapon = doc.weapon.map((el) => el.toLowerCase());
+    await doc.save();
+  }
+  res.json(docs);
+}); */
+
 export const getAllCharacters = asyncHandler(async (req, res, next) => {
   const {
     query: { name, location, elements, weakness, strength, resistance, weapon },
   } = req;
   const query = {};
-
   if (name) {
     query.name = name.toUpperCase();
   }
-
   if (location) {
-    const searchElements = elements
-      .split(",")
-      .map(
-      (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+    const searchLocation = location.split(",").map((location) =>
+      location
+        .split(" ")
+        .map(
+          (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        )
+        .join(" ")
     );
-  query.location = { $all: searchLocation };
+    query.location = { $all: searchLocation };
   }
   if (elements) {
-    const searchElements = elements
-      .split(",")
-      .map(
-        (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-      );
+    const searchElements = elements.split(",");
     query.elements = { $all: searchElements };
   }
   if (weakness) {
-    const searchWeakness = weakness
-      .split(",")
-      .map(
-      (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-    );
-  query.weakness = { $all: searchWeakness };
+    const searchWeakness = weakness.split(",");
+    query.weakness = { $all: searchWeakness };
   }
   if (strength) {
-    const searchStrength = strength
-      .split(",")
-      .map(
-      (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-    );
-  query.strength = { $all: searchStrength };
+    const searchStrength = strength.split(",");
+    query.strength = { $all: searchStrength };
   }
   if (resistance) {
-    const searchResistance = resistance
-      .split(",")
-      .map(
-      (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-    );
-  query.resistance = { $all: searchResistance };
+    const searchResistance = resistance.split(",");
+    query.resistance = { $all: searchResistance };
   }
   if (weapon) {
-    const searchWeapon = weapon
-      .split(",")
-      .map(
-      (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-    );
-  query.weapon = { $all: searchWeapon };
+    const searchWeapon = weapon.split(",");
+    query.weapon = { $all: searchWeapon };
   }
 
   console.log(query);
