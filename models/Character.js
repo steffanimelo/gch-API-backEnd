@@ -16,5 +16,6 @@ description: {type: String, required: [true, 'Description is required!']},
 img_url: {type: String, required: [true, 'Img URL is required!']}
 });
 
-
 export default model ('Character', postSchema);
+
+
