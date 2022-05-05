@@ -21,7 +21,7 @@ app.use(cookieParser());
 
 const apiLimiter = rateLimit({
   windowMs: 60 * 60 * 1000,
-  max: 60,  //defaut
+  max: 1000,  //defaut
   standardHeaders: true, 
   legacyHeaders: false,
   message:
