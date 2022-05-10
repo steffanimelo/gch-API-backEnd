@@ -10,6 +10,7 @@ const apiLimiter = rateLimit({
 });
 
 const rateLimiting = () => (req, res, next) => {
+  console.log(req.hostname);
   if (process.env.FRONTEND_URL === req.hostname) {
     console.log("Allowed");
     return next();
