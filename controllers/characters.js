@@ -55,7 +55,9 @@ export const getAllCharacters = asyncHandler(async (req, res, next) => {
     query.weapon = { $all: searchWeapon };
   }
 
-  console.log(query);
+  if (process.env.NODE_ENV !== "production") {
+    console.log(query);
+  }
   const characters = await Character.find(query);
 
   res.json({ total: characters.length, characters });
