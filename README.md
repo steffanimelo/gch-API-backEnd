@@ -1,4 +1,4 @@
-[![Game Characters API](https://firebasestorage.googleapis.com/v0/b/game-characters-api.appspot.com/o/icons%2Ffor_readme%2Fgame_character_logo_static_for_readme.png?alt=media&token=084dcb69-4432-4a82-b839-dade90d5ac54)]()
+[![Game Characters API](https://firebasestorage.googleapis.com/v0/b/game-characters-api.appspot.com/o/icons%2Ffor_readme%2Flog_for_readme.png?alt=media&token=d7640ae7-03a3-4436-8d1e-bc8cfb1a3faf)]()
 
 
 # Game Characters API 
