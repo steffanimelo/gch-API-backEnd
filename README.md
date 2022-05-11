@@ -16,7 +16,7 @@ Please also feel free to visit our [ Internet Site ](https://gamecharactersapi.n
 ## Current Version
 
 The current version of the API is 1.
-The Game Characters API is an open API, which means no authentification is required to query the data. Since no authentification is required, there is only support for GET requests. 
+The Game Characters API is an open API, which means no authentication is required to query the data. Since no authentication is required, there is only support for GET requests. 
 
 ## Rate Limit
 
