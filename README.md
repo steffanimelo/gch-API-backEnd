@@ -3,13 +3,15 @@
 
 # Game Characters API 
 
+Welcome to our Backend API repository. 
 
 ## Introduction
 
-Game Characters API is RESTful ([REST Guidlines](https://restfulapi.net/)) based on the game series [Final Fantasy](https://www.finalfantasy.com/).
-
+Game Characters API is [ RESTful ](https://restfulapi.net/) based on the game series [Final Fantasy](https://www.finalfantasy.com/).
 
 This documentation will provide you with all the relevent information needed for you to make your HTTP requests such as the available endpoints together with their associated inputs (examples shown).
+
+Please also feel free to visit our [ Internet Site ](https://gamecharactersapi.netlify.app/) for an exciting adventure which includes a detailed compilation of the [Documentation](https://gamecharactersapi.netlify.app/documents). Please go [here](https://github.com/Dea314/final-project) to access our frontend repository.
 
 ## Current Version
 
